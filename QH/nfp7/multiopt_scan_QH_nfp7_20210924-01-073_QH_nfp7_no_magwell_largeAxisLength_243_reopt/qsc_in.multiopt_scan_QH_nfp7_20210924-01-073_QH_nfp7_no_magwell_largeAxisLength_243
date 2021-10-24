@@ -1,0 +1,53 @@
+general_option = "multiopt"
+
+[qsc]
+nfp = 7
+nphi = 199
+verbose = 0
+order_r_option = "r2.1"
+
+# Initial conditions:
+R0c = [1.0, 0.17]
+Z0s = [0.0, 0.17]
+eta_bar = 1.0
+B2c = 0.0
+
+[multiopt]
+verbose = 1
+nopts = 2
+
+[opt0]
+verbose = 1
+max_iter = 1000
+fourier_refine = 2
+#nphi = [15, 19, 21]
+
+vary_eta_bar = 1
+vary_B2c = 1
+vary_R0c = [false, true]
+vary_Z0s = [false, true]
+
+weight_axis_length = 31.622776601683803
+target_axis_length = 13.750688670741411
+weight_grad_B = 1.0
+weight_B20 = 0.01
+
+[opt1]
+verbose = 1
+max_iter = 10000
+fourier_refine = 18
+#nphi = [25, 29, 31, 35, 39, 41, 45]
+
+vary_eta_bar = 1
+vary_B2c = 1
+vary_R0c = [false, true, true, true]
+vary_Z0s = [false, true, true, true]
+vary_R0s = [false, false, false, false]
+vary_Z0c = [false, false, false, false]
+
+weight_axis_length = 31.622776601683803
+target_axis_length = 13.750688670741411
+weight_grad_B = 1.0
+weight_grad_grad_B = 0.039235625002582625
+weight_B20 = 1952.425790288299
+
